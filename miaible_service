@@ -1,0 +1,9 @@
+#!/bin/sh /etc/rc.common
+START=96
+start() {
+  sh '/data/miaible.sh' &
+}
+
+stop() {
+  kill `ps|grep 'sh /data/miaible.sh'|grep -v grep|awk '{print $1}'`
+}
